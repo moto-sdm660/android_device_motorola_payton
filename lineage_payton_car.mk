@@ -26,6 +26,19 @@ $(call inherit-product, device/lineage/car/lineage_car_vendor.mk)
 
 PRODUCT_CHARACTERISTICS := automotive
 
+# Bring-up: adb on by default, as root and without authorization, and no
+# Rescue Party (like tangorpro_car does for non-user builds). LineageOS
+# turns debugging off in userdebug otherwise; the build reads any
+# non-empty value as true, hence the empty assignment.
+PRODUCT_NOT_DEBUGGABLE_IN_USERDEBUG :=
+ifneq ($(TARGET_BUILD_VARIANT),user)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.adb.secure=0 \
+    persist.sys.usb.config=adb \
+    service.adb.root=1 \
+    persist.sys.disable_rescue=true
+endif
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/car_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/car_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.type.automotive.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.type.automotive.xml \
