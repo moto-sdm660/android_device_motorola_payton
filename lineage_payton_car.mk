@@ -16,6 +16,7 @@ PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := false
 $(call inherit-product, packages/services/Car/car_product/build/car_generic_system.mk)
 $(call inherit-product, packages/services/Car/car_product/build/car_system_ext.mk)
 $(call inherit-product, packages/services/Car/car_product/build/car_product.mk)
+$(call inherit-product, packages/services/Car/car_product/build/car_vendor.mk)
 
 # Device
 $(call inherit-product, device/motorola/payton/device.mk)
