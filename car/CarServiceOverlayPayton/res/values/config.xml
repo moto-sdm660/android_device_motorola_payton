@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- No initial user notice: AOSP only ships a placeholder screen -->
+    <string name="config_userNoticeUiService" translatable="false"></string>
+</resources>

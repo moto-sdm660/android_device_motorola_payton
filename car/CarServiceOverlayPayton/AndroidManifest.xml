@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.android.car.resources.payton">
+    <application android:hasCode="false" />
+    <overlay android:targetPackage="com.android.car.updatable"
+             android:isStatic="true"
+             android:priority="10" />
+</manifest>

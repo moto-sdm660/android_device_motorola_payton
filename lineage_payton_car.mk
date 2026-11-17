@@ -31,6 +31,13 @@ $(call inherit-product, device/lineage/car/lineage_car_vendor.mk)
 
 PRODUCT_CHARACTERISTICS := automotive
 
+# Denser UI than the phone (420): the car UI is made for big screens
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.lcd_density=280
+
+PRODUCT_PACKAGES += \
+    CarServiceOverlayPayton
+
 # Bring-up: adb on by default, as root and without authorization, and no
 # Rescue Party (like tangorpro_car does for non-user builds). LineageOS
 # turns debugging off in userdebug otherwise; the build reads any
