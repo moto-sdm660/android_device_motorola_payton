@@ -15,4 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_payton.mk
+    $(LOCAL_DIR)/lineage_payton.mk \
+    $(LOCAL_DIR)/lineage_payton_car.mk
