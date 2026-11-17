@@ -8,6 +8,11 @@
 
 PORTRAIT_UI := true
 
+# car-frameworks-service uses system_server internals: R8 optimizing
+# services.jar dropped what only it uses (LaunchParamsModifier.flushLog())
+# and system_server died on AbstractMethodError. tangorpro_car does the same.
+SYSTEM_OPTIMIZE_JAVA := false
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, vendor/lineage/config/common_car.mk)
 
